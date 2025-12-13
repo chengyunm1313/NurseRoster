@@ -1,0 +1,142 @@
+<svg width="1200" height="760" viewBox="0 0 1200 760" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect x="0" y="0" width="1200" height="760" fill="#F8FAFC"/>
+
+  <!-- Top Bar -->
+  <rect x="16" y="16" width="1168" height="64" rx="14" fill="#FFFFFF" stroke="#E2E8F0"/>
+  <text x="36" y="56" font-family="Inter, Arial" font-size="20" fill="#0F172A">護理師排班系統</text>
+
+  <!-- Project / Period -->
+  <rect x="260" y="30" width="260" height="36" rx="10" fill="#F8FAFC" stroke="#E2E8F0"/>
+  <text x="274" y="54" font-family="Inter, Arial" font-size="13" fill="#475569">專案：內科病房 A（2026/01）</text>
+
+  <!-- Global actions -->
+  <rect x="830" y="30" width="110" height="36" rx="10" fill="#FFFFFF" stroke="#E2E8F0"/>
+  <text x="852" y="54" font-family="Inter, Arial" font-size="13" fill="#0F172A">匯入資料</text>
+
+  <rect x="948" y="30" width="110" height="36" rx="10" fill="#FFFFFF" stroke="#E2E8F0"/>
+  <text x="970" y="54" font-family="Inter, Arial" font-size="13" fill="#0F172A">匯出班表</text>
+
+  <rect x="1066" y="30" width="98" height="36" rx="10" fill="#2563EB"/>
+  <text x="1086" y="54" font-family="Inter, Arial" font-size="13" fill="#FFFFFF">儲存</text>
+
+  <!-- Left Nav -->
+  <rect x="16" y="96" width="220" height="648" rx="14" fill="#FFFFFF" stroke="#E2E8F0"/>
+  <text x="36" y="130" font-family="Inter, Arial" font-size="12" fill="#475569">導覽</text>
+
+  <!-- Nav items -->
+  <rect x="28" y="144" width="196" height="40" rx="10" fill="#EFF6FF" stroke="#BFDBFE"/>
+  <text x="48" y="170" font-family="Inter, Arial" font-size="13" fill="#1D4ED8">行事曆檢視</text>
+
+  <rect x="28" y="194" width="196" height="40" rx="10" fill="#FFFFFF" stroke="#E2E8F0"/>
+  <text x="48" y="220" font-family="Inter, Arial" font-size="13" fill="#0F172A">規則維護</text>
+
+  <rect x="28" y="244" width="196" height="40" rx="10" fill="#FFFFFF" stroke="#E2E8F0"/>
+  <text x="48" y="270" font-family="Inter, Arial" font-size="13" fill="#0F172A">資料維護</text>
+
+  <rect x="28" y="294" width="196" height="40" rx="10" fill="#FFFFFF" stroke="#E2E8F0"/>
+  <text x="48" y="320" font-family="Inter, Arial" font-size="13" fill="#0F172A">最佳化排班</text>
+
+  <!-- Legend -->
+  <text x="36" y="380" font-family="Inter, Arial" font-size="12" fill="#475569">班別圖例</text>
+  <rect x="36" y="394" width="12" height="12" rx="3" fill="#22C55E"/><text x="56" y="404" font-family="Inter, Arial" font-size="12" fill="#0F172A">早班</text>
+  <rect x="36" y="416" width="12" height="12" rx="3" fill="#3B82F6"/><text x="56" y="426" font-family="Inter, Arial" font-size="12" fill="#0F172A">小夜</text>
+  <rect x="36" y="438" width="12" height="12" rx="3" fill="#8B5CF6"/><text x="56" y="448" font-family="Inter, Arial" font-size="12" fill="#0F172A">大夜</text>
+  <rect x="36" y="460" width="12" height="12" rx="3" fill="#94A3B8"/><text x="56" y="470" font-family="Inter, Arial" font-size="12" fill="#0F172A">休假</text>
+
+  <!-- Main Content -->
+  <rect x="252" y="96" width="932" height="648" rx="14" fill="#FFFFFF" stroke="#E2E8F0"/>
+
+  <!-- Page header -->
+  <text x="276" y="130" font-family="Inter, Arial" font-size="18" fill="#0F172A">行事曆檢視</text>
+  <text x="276" y="154" font-family="Inter, Arial" font-size="12" fill="#475569">查看目前與未來排班；支援拖拉調整、點擊查看明細與衝突提示。</text>
+
+  <!-- Controls row -->
+  <rect x="276" y="172" width="240" height="36" rx="10" fill="#F8FAFC" stroke="#E2E8F0"/>
+  <text x="290" y="196" font-family="Inter, Arial" font-size="13" fill="#475569">搜尋護理師姓名/工號…</text>
+
+  <rect x="528" y="172" width="150" height="36" rx="10" fill="#FFFFFF" stroke="#E2E8F0"/>
+  <text x="542" y="196" font-family="Inter, Arial" font-size="13" fill="#0F172A">科別：內科A ▾</text>
+
+  <rect x="690" y="172" width="150" height="36" rx="10" fill="#FFFFFF" stroke="#E2E8F0"/>
+  <text x="704" y="196" font-family="Inter, Arial" font-size="13" fill="#0F172A">顯示：週檢視 ▾</text>
+
+  <rect x="852" y="172" width="90" height="36" rx="10" fill="#FFFFFF" stroke="#E2E8F0"/>
+  <text x="870" y="196" font-family="Inter, Arial" font-size="13" fill="#0F172A">今天</text>
+
+  <rect x="948" y="172" width="110" height="36" rx="10" fill="#2563EB"/>
+  <text x="966" y="196" font-family="Inter, Arial" font-size="13" fill="#FFFFFF">新增班別</text>
+
+  <rect x="1066" y="172" width="94" height="36" rx="10" fill="#FFFFFF" stroke="#E2E8F0"/>
+  <text x="1084" y="196" font-family="Inter, Arial" font-size="13" fill="#0F172A">衝突</text>
+
+  <!-- Calendar grid area -->
+  <rect x="276" y="222" width="884" height="486" rx="12" fill="#F8FAFC" stroke="#E2E8F0"/>
+
+  <!-- Grid header: dates -->
+  <rect x="276" y="222" width="884" height="40" rx="12" fill="#FFFFFF" stroke="#E2E8F0"/>
+  <text x="292" y="248" font-family="Inter, Arial" font-size="12" fill="#475569">人員</text>
+
+  <!-- Date columns -->
+  <g font-family="Inter, Arial" font-size="12" fill="#0F172A">
+    <text x="400" y="248">一 01/05</text>
+    <text x="520" y="248">二 01/06</text>
+    <text x="640" y="248">三 01/07</text>
+    <text x="760" y="248">四 01/08</text>
+    <text x="880" y="248">五 01/09</text>
+    <text x="1000" y="248">六 01/10</text>
+    <text x="1120" y="248">日 01/11</text>
+  </g>
+
+  <!-- Row labels -->
+  <g font-family="Inter, Arial" font-size="12" fill="#0F172A">
+    <text x="292" y="292">王小明</text>
+    <text x="292" y="332">陳美玲</text>
+    <text x="292" y="372">林怡君</text>
+    <text x="292" y="412">張雅雯</text>
+    <text x="292" y="452">黃志豪</text>
+    <text x="292" y="492">李佳穎</text>
+  </g>
+
+  <!-- Grid lines -->
+  <g stroke="#E2E8F0">
+    <!-- vertical lines (rough) -->
+    <line x1="360" y1="222" x2="360" y2="708"/>
+    <line x1="480" y1="222" x2="480" y2="708"/>
+    <line x1="600" y1="222" x2="600" y2="708"/>
+    <line x1="720" y1="222" x2="720" y2="708"/>
+    <line x1="840" y1="222" x2="840" y2="708"/>
+    <line x1="960" y1="222" x2="960" y2="708"/>
+    <line x1="1080" y1="222" x2="1080" y2="708"/>
+    <!-- horizontal lines -->
+    <line x1="276" y1="302" x2="1160" y2="302"/>
+    <line x1="276" y1="342" x2="1160" y2="342"/>
+    <line x1="276" y1="382" x2="1160" y2="382"/>
+    <line x1="276" y1="422" x2="1160" y2="422"/>
+    <line x1="276" y1="462" x2="1160" y2="462"/>
+    <line x1="276" y1="502" x2="1160" y2="502"/>
+  </g>
+
+  <!-- Sample shift chips -->
+  <g font-family="Inter, Arial" font-size="11" fill="#0F172A">
+    <rect x="370" y="276" width="96" height="22" rx="8" fill="#DCFCE7" stroke="#86EFAC"/>
+    <text x="388" y="291">早班</text>
+
+    <rect x="610" y="316" width="96" height="22" rx="8" fill="#DBEAFE" stroke="#93C5FD"/>
+    <text x="628" y="331">小夜</text>
+
+    <rect x="850" y="356" width="96" height="22" rx="8" fill="#EDE9FE" stroke="#C4B5FD"/>
+    <text x="868" y="371">大夜</text>
+
+    <rect x="970" y="396" width="96" height="22" rx="8" fill="#E2E8F0" stroke="#CBD5E1"/>
+    <text x="988" y="411">休假</text>
+  </g>
+
+  <!-- Right side note -->
+  <rect x="930" y="548" width="230" height="160" rx="12" fill="#FFFFFF" stroke="#E2E8F0"/>
+  <text x="946" y="574" font-family="Inter, Arial" font-size="12" fill="#0F172A">操作提示</text>
+  <text x="946" y="596" font-family="Inter, Arial" font-size="11" fill="#475569">• 拖拉班別可調整日期</text>
+  <text x="946" y="616" font-family="Inter, Arial" font-size="11" fill="#475569">• 點班別可看明細/備註</text>
+  <text x="946" y="636" font-family="Inter, Arial" font-size="11" fill="#475569">• 衝突會以紅色提示</text>
+  <text x="946" y="656" font-family="Inter, Arial" font-size="11" fill="#475569">• 變更後需「儲存」</text>
+</svg>

@@ -1,0 +1,81 @@
+<svg width="1200" height="760" viewBox="0 0 1200 760" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="760" fill="#F8FAFC"/>
+
+  <!-- Header -->
+  <rect x="16" y="16" width="1168" height="64" rx="14" fill="#FFFFFF" stroke="#E2E8F0"/>
+  <text x="36" y="56" font-family="Inter, Arial" font-size="20" fill="#0F172A">資料維護</text>
+
+  <rect x="804" y="30" width="110" height="36" rx="10" fill="#FFFFFF" stroke="#E2E8F0"/>
+  <text x="824" y="54" font-family="Inter, Arial" font-size="13" fill="#0F172A">下載範本</text>
+
+  <rect x="922" y="30" width="110" height="36" rx="10" fill="#FFFFFF" stroke="#E2E8F0"/>
+  <text x="944" y="54" font-family="Inter, Arial" font-size="13" fill="#0F172A">匯入</text>
+
+  <rect x="1040" y="30" width="124" height="36" rx="10" fill="#2563EB"/>
+  <text x="1062" y="54" font-family="Inter, Arial" font-size="13" fill="#FFFFFF">新增人員</text>
+
+  <!-- Main -->
+  <rect x="16" y="96" width="1168" height="648" rx="14" fill="#FFFFFF" stroke="#E2E8F0"/>
+
+  <!-- Tabs -->
+  <rect x="28" y="112" width="360" height="40" rx="12" fill="#F8FAFC" stroke="#E2E8F0"/>
+  <rect x="34" y="118" width="112" height="28" rx="10" fill="#EFF6FF" stroke="#BFDBFE"/>
+  <text x="62" y="137" font-family="Inter, Arial" font-size="13" fill="#1D4ED8">人員</text>
+
+  <rect x="150" y="118" width="112" height="28" rx="10" fill="#FFFFFF" stroke="#E2E8F0"/>
+  <text x="178" y="137" font-family="Inter, Arial" font-size="13" fill="#0F172A">班別代碼</text>
+
+  <rect x="266" y="118" width="112" height="28" rx="10" fill="#FFFFFF" stroke="#E2E8F0"/>
+  <text x="300" y="137" font-family="Inter, Arial" font-size="13" fill="#0F172A">職級代碼</text>
+
+  <!-- Search & filters -->
+  <rect x="28" y="164" width="280" height="36" rx="10" fill="#F8FAFC" stroke="#E2E8F0"/>
+  <text x="44" y="188" font-family="Inter, Arial" font-size="13" fill="#475569">搜尋姓名/工號…</text>
+
+  <rect x="316" y="164" width="140" height="36" rx="10" fill="#FFFFFF" stroke="#E2E8F0"/>
+  <text x="330" y="188" font-family="Inter, Arial" font-size="13" fill="#0F172A">科別：內科A ▾</text>
+
+  <rect x="464" y="164" width="140" height="36" rx="10" fill="#FFFFFF" stroke="#E2E8F0"/>
+  <text x="478" y="188" font-family="Inter, Arial" font-size="13" fill="#0F172A">職級：全部 ▾</text>
+
+  <!-- Table -->
+  <rect x="28" y="214" width="1128" height="514" rx="12" fill="#FFFFFF" stroke="#E2E8F0"/>
+  <rect x="28" y="214" width="1128" height="44" rx="12" fill="#F8FAFC" stroke="#E2E8F0"/>
+
+  <g font-family="Inter, Arial" font-size="12" fill="#475569">
+    <text x="44" y="242">工號</text>
+    <text x="140" y="242">姓名</text>
+    <text x="280" y="242">職級</text>
+    <text x="380" y="242">年資</text>
+    <text x="460" y="242">科別</text>
+    <text x="580" y="242">可上班別</text>
+    <text x="760" y="242">偏好/限制（摘要）</text>
+    <text x="1040" y="242">操作</text>
+  </g>
+
+  <!-- Rows -->
+  <g font-family="Inter, Arial" font-size="12" fill="#0F172A" stroke="#E2E8F0">
+    <line x1="28" y1="302" x2="1156" y2="302"/>
+    <line x1="28" y1="346" x2="1156" y2="346"/>
+    <line x1="28" y1="390" x2="1156" y2="390"/>
+
+    <text x="44" y="286">N001</text><text x="140" y="286">王小明</text><text x="280" y="286">N2</text><text x="380" y="286">3年</text><text x="460" y="286">內科A</text>
+    <text x="580" y="286">早/小夜</text><text x="760" y="286">週三不可…</text>
+    <rect x="1032" y="270" width="54" height="26" rx="8" fill="#FFFFFF"/><text x="1046" y="288">編輯</text>
+    <rect x="1092" y="270" width="54" height="26" rx="8" fill="#FFFFFF"/><text x="1106" y="288">刪除</text>
+
+    <text x="44" y="330">N002</text><text x="140" y="330">陳美玲</text><text x="280" y="330">N3</text><text x="380" y="330">8年</text><text x="460" y="330">內科A</text>
+    <text x="580" y="330">早/小夜/大夜</text><text x="760" y="330">偏好早班…</text>
+    <rect x="1032" y="314" width="54" height="26" rx="8" fill="#FFFFFF"/><text x="1046" y="332">編輯</text>
+    <rect x="1092" y="314" width="54" height="26" rx="8" fill="#FFFFFF"/><text x="1106" y="332">刪除</text>
+
+    <text x="44" y="374">N003</text><text x="140" y="374">林怡君</text><text x="280" y="374">N1</text><text x="380" y="374">1年</text><text x="460" y="374">內科A</text>
+    <text x="580" y="374">早</text><text x="760" y="374">不排夜班</text>
+    <rect x="1032" y="358" width="54" height="26" rx="8" fill="#FFFFFF"/><text x="1046" y="376">編輯</text>
+    <rect x="1092" y="358" width="54" height="26" rx="8" fill="#FFFFFF"/><text x="1106" y="376">刪除</text>
+  </g>
+
+  <!-- Import preview hint -->
+  <rect x="760" y="164" width="396" height="36" rx="10" fill="#FFF7ED" stroke="#FED7AA"/>
+  <text x="774" y="188" font-family="Inter, Arial" font-size="12" fill="#9A3412">匯入前會先顯示「資料預覽」與欄位對應檢查</text>
+</svg>
