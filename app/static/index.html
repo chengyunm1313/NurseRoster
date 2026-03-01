@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>護理排班系統</title>
+    <link rel="stylesheet" href="/static/app.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar">
+        <div class="brand">
+          <div class="brand-mark">NR</div>
+          <div>
+            <h1>護理排班系統</h1>
+            <p>Calendar / Rules / Optimization</p>
+          </div>
+        </div>
+        <label class="field">
+          <span>目前專案</span>
+          <select id="project-select"></select>
+        </label>
+        <nav class="nav-tabs">
+          <button class="nav-tab active" data-tab="calendar">行事曆</button>
+          <button class="nav-tab" data-tab="rules">規則維護</button>
+          <button class="nav-tab" data-tab="master">資料維護</button>
+          <button class="nav-tab" data-tab="optimization">最佳化</button>
+          <button class="nav-tab" data-tab="dsl">DSL 測試</button>
+          <button class="nav-tab" data-tab="settings">系統設定</button>
+        </nav>
+        <section class="panel small-panel">
+          <h2>最近操作</h2>
+          <div id="audit-log-list" class="audit-list"></div>
+        </section>
+      </aside>
+
+      <main class="main-content">
+        <header class="topbar">
+          <div>
+            <p class="eyebrow">示範版 v1</p>
+            <h2 id="topbar-title">行事曆排班總覽</h2>
+          </div>
+          <div class="status-badges">
+            <span class="badge badge-blue">SSE Streaming</span>
+            <span class="badge badge-green">SQLite 持久化</span>
+          </div>
+        </header>
+
+        <section id="tab-calendar" class="tab-panel active">
+          <div class="panel toolbar">
+            <label class="field">
+              <span>起始日期</span>
+              <input id="calendar-from" type="date" />
+            </label>
+            <label class="field">
+              <span>結束日期</span>
+              <input id="calendar-to" type="date" />
+            </label>
+            <label class="field">
+              <span>科別</span>
+              <select id="calendar-department"></select>
+            </label>
+            <button id="calendar-refresh" class="button secondary">重新整理</button>
+            <button id="calendar-save-snapshot" class="button">建立快照</button>
+          </div>
+
+          <div class="grid-layout">
+            <section class="panel wide-panel">
+              <div id="calendar-summary" class="summary-cards"></div>
+              <div class="calendar-wrapper">
+                <table id="calendar-table" class="calendar-table"></table>
+              </div>
+            </section>
+            <section class="panel side-panel">
+              <h3>衝突與快照</h3>
+              <div id="conflict-list" class="stack-list"></div>
+              <hr />
+              <div id="snapshot-list" class="stack-list"></div>
+            </section>
+          </div>
+        </section>
+
+        <section id="tab-rules" class="tab-panel">
+          <div class="grid-layout rules-layout">
+            <section class="panel">
+              <h3>規則清單</h3>
+              <div id="rule-list" class="stack-list"></div>
+            </section>
+            <section class="panel">
+              <h3>規則資料</h3>
+              <div class="form-grid">
+                <label class="field">
+                  <span>標題</span>
+                  <input id="rule-title" type="text" />
+                </label>
+                <label class="field">
+                  <span>Scope</span>
+                  <select id="rule-scope">
+                    <option value="GLOBAL">GLOBAL</option>
+                    <option value="DEPARTMENT">DEPARTMENT</option>
+                    <option value="NURSE">NURSE</option>
+                  </select>
+                </label>
+                <label class="field">
+                  <span>Scope ID</span>
+                  <input id="rule-scope-id" type="text" placeholder="例如 ICU 或 N021" />
+                </label>
+                <label class="field">
+                  <span>類型</span>
+                  <select id="rule-type">
+                    <option value="HARD">HARD</option>
+                    <option value="SOFT">SOFT</option>
+                    <option value="PREFERENCE">PREFERENCE</option>
+                  </select>
+                </label>
+                <label class="field">
+                  <span>優先序</span>
+                  <input id="rule-priority" type="number" value="100" />
+                </label>
+              </div>
+              <div class="button-row">
+                <button id="rule-create" class="button">建立規則</button>
+                <button id="rule-delete" class="button danger">刪除規則</button>
+              </div>
+
+              <label class="field">
+                <span>自然語言規則</span>
+                <textarea id="rule-nl" rows="4" placeholder="例如：夜班後至少休息 1 天，避免連續大夜超過 2 天"></textarea>
+              </label>
+              <div class="button-row">
+                <button id="rule-generate" class="button">對話轉 DSL</button>
+              </div>
+
+              <label class="field">
+                <span>DSL 直接編輯</span>
+                <textarea id="rule-dsl" rows="12"></textarea>
+              </label>
+              <div class="button-row">
+                <button id="rule-validate" class="button secondary">驗證並存版本</button>
+              </div>
+            </section>
+            <section class="panel">
+              <h3>串流結果</h3>
+              <pre id="rule-stream" class="code-block"></pre>
+              <div id="rule-validation" class="message-box"></div>
+              <div id="rule-reverse" class="message-box subtle"></div>
+              <h4>歷史版本</h4>
+              <div id="rule-version-list" class="stack-list"></div>
+            </section>
+          </div>
+        </section>
+
+        <section id="tab-master" class="tab-panel">
+          <div class="panel">
+            <div class="button-row">
+              <button class="button secondary resource-tab active" data-resource="nurses">護理師</button>
+              <button class="button secondary resource-tab" data-resource="departments">科別</button>
+              <button class="button secondary resource-tab" data-resource="shift_codes">班別代碼</button>
+              <button class="button secondary resource-tab" data-resource="job_levels">職級</button>
+              <button class="button secondary resource-tab" data-resource="skill_codes">技能</button>
+            </div>
+            <div class="grid-layout master-layout">
+              <section>
+                <div id="master-table"></div>
+              </section>
+              <section class="panel inner-panel">
+                <h3 id="master-form-title">新增資料</h3>
+                <form id="master-form" class="form-grid"></form>
+                <div class="button-row">
+                  <button id="master-save" class="button" type="button">儲存</button>
+                  <button id="master-reset" class="button secondary" type="button">清空</button>
+                </div>
+              </section>
+            </div>
+          </div>
+        </section>
+
+        <section id="tab-optimization" class="tab-panel">
+          <div class="grid-layout">
+            <section class="panel">
+              <h3>參數設定</h3>
+              <div class="form-grid">
+                <label class="field">
+                  <span>起始日期</span>
+                  <input id="opt-from" type="date" />
+                </label>
+                <label class="field">
+                  <span>結束日期</span>
+                  <input id="opt-to" type="date" />
+                </label>
+                <label class="field">
+                  <span>時間上限（秒）</span>
+                  <input id="opt-time-limit" type="number" value="30" />
+                </label>
+                <label class="field">
+                  <span>隨機種子</span>
+                  <input id="opt-seed" type="number" value="7" />
+                </label>
+                <label class="field">
+                  <span>軟性權重倍率</span>
+                  <input id="opt-multiplier" type="number" step="0.1" value="1" />
+                </label>
+              </div>
+              <label class="field">
+                <span>Coverage JSON</span>
+                <textarea id="opt-coverage" rows="10"></textarea>
+              </label>
+              <div class="button-row">
+                <button id="opt-start" class="button">開始最佳化</button>
+                <button id="opt-cancel" class="button danger">取消</button>
+                <button id="opt-apply" class="button secondary">套用結果</button>
+              </div>
+            </section>
+            <section class="panel">
+              <h3>執行狀態</h3>
+              <div class="progress-bar">
+                <div id="opt-progress-bar" class="progress-fill"></div>
+              </div>
+              <p id="opt-status" class="status-line">尚未開始最佳化。</p>
+              <div id="opt-summary" class="message-box subtle"></div>
+              <div id="opt-log" class="log-box"></div>
+            </section>
+          </div>
+        </section>
+
+        <section id="tab-dsl" class="tab-panel">
+          <div class="grid-layout">
+            <section class="panel">
+              <h3>自然語言 → DSL</h3>
+              <label class="field">
+                <span>輸入規則</span>
+                <textarea id="dsl-nl" rows="8"></textarea>
+              </label>
+              <div class="button-row">
+                <button id="dsl-run" class="button">開始測試</button>
+              </div>
+            </section>
+            <section class="panel">
+              <h3>DSL / 反向翻譯</h3>
+              <textarea id="dsl-input" rows="12"></textarea>
+              <div class="button-row">
+                <button id="dsl-validate" class="button secondary">驗證 DSL</button>
+              </div>
+              <pre id="dsl-stream" class="code-block"></pre>
+              <div id="dsl-validation" class="message-box"></div>
+              <div id="dsl-reverse" class="message-box subtle"></div>
+            </section>
+          </div>
+        </section>
+
+        <section id="tab-settings" class="tab-panel">
+          <div class="grid-layout">
+            <section class="panel">
+              <h3>LLM 設定</h3>
+              <div class="form-grid">
+                <label class="field">
+                  <span>模式</span>
+                  <select id="setting-llm-mode">
+                    <option value="fallback">Fallback（本機規則轉譯）</option>
+                    <option value="openai">OpenAI Responses API</option>
+                  </select>
+                </label>
+                <label class="field">
+                  <span>模型</span>
+                  <input id="setting-model" type="text" />
+                </label>
+                <label class="field field-full">
+                  <span>OpenAI API Key</span>
+                  <input id="setting-api-key" type="password" placeholder="只會儲存在本機 SQLite，不會回顯" />
+                </label>
+              </div>
+              <div class="button-row">
+                <button id="setting-save" class="button">儲存設定</button>
+              </div>
+              <div id="setting-result" class="message-box subtle"></div>
+            </section>
+            <section class="panel">
+              <h3>說明</h3>
+              <ul class="plain-list">
+                <li>若未填入 API Key，規則轉譯會自動退回本機 fallback 邏輯。</li>
+                <li>最佳化與規則轉譯都會保留進度與結果，不會阻塞畫面。</li>
+                <li>所有手動改班、版本啟用與最佳化套用都會寫入 audit log。</li>
+              </ul>
+            </section>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <aside id="calendar-drawer" class="drawer hidden">
+      <div class="drawer-card">
+        <div class="drawer-header">
+          <h3>班表調整</h3>
+          <button id="drawer-close" class="icon-button">×</button>
+        </div>
+        <div id="drawer-context" class="message-box subtle"></div>
+        <label class="field">
+          <span>班別</span>
+          <select id="drawer-shift"></select>
+        </label>
+        <label class="field">
+          <span>備註</span>
+          <textarea id="drawer-note" rows="4"></textarea>
+        </label>
+        <div class="button-row">
+          <button id="drawer-save" class="button">儲存</button>
+        </div>
+      </div>
+    </aside>
+
+    <script type="module" src="/static/app.js"></script>
+  </body>
+</html>
