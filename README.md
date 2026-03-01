@@ -1,6 +1,6 @@
 # 護理排班系統
 
-這是一個依照 [規格文件 v1.1.3](./docs/spec_v1.1.3.md) 與本地工作副本 [prompt/排班系統規格.md](./prompt/排班系統規格.md) 實作的 v1 示範應用，提供：
+這是一個依照本 [排班系統規格](./docs/prompt/排班系統規格.md) 與 [規格文件 v1.1.3](./docs/prompt/spec_v1.1.3.md) 實作的 v1 示範應用，提供：
 
 - 行事曆排班總覽與手動調整
 - 護理師、科別、班別、職級、技能的完整 CRUD
@@ -23,12 +23,6 @@ NurseRoster/
 ├─ .venv/
 │  ├─ bin/
 │  └─ pyvenv.cfg
-├─ assets/
-│  └─ ui/
-│     ├─ calendar-view.svg
-│     ├─ data-maintenance.svg
-│     ├─ optimization.svg
-│     └─ rules-maintenance.svg
 ├─ app/
 │  ├─ __init__.py
 │  ├─ main.py
@@ -52,10 +46,16 @@ NurseRoster/
 ├─ logs/
 │  └─ app.log
 ├─ docs/
-│  └─ spec_v1.1.3.md
+│  ├─ assets/
+│  │  └─ ui/
+│  │     ├─ calendar-view.svg
+│  │     ├─ data-maintenance.svg
+│  │     ├─ optimization.svg
+│  │     └─ rules-maintenance.svg
+│  ├─ prompt/
+│  │  ├─ spec_v1.1.3.md
+│  │  └─ 排班系統規格.md
 ├─ LICENSE
-├─ prompt/
-│  └─ 排班系統規格.md
 ├─ tests/
 │  ├─ test_dsl_tools.py
 │  └─ test_optimizer.py
@@ -270,4 +270,4 @@ python3 -m unittest discover -s tests
 - 建立完整後端 API、資料模型、快照、audit log 與前端 SPA
 - 內建 30 位護理師 seed、預設規則與示範專案
 - 補齊一鍵啟動檔與基本測試
-- 保留原本倉庫中的 `docs/` 規格文件與 `assets/ui/` SVG 介面示意
+- 保留原本倉庫中的 `docs/` 規格文件與授權檔
