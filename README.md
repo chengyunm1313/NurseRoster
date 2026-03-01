@@ -110,6 +110,28 @@ NurseRoster/
 這個專案的設計是「不用先手動進入 `.venv`」。  
 你只要執行啟動檔，系統會自己建立 `.venv`、安裝套件、啟動服務。
 
+### 如果你是從 GitHub 下載下來
+
+如果你是剛從 GitHub 下載這個專案，請直接照下面方式操作，不需要先自己建立 `.venv`，也不需要先自己安裝套件。
+
+你只需要先確認一件事：
+
+- 電腦裡已經有安裝 `Python 3`
+
+接下來直接啟動即可：
+
+- macOS / Linux：在專案資料夾執行 `bash run_app.sh`
+- macOS 也可以直接雙擊 `run_app.command`
+- Windows：直接雙擊 `run_app.bat`
+
+請不要先手動做下面這些事：
+
+- 不需要先執行 `python3 -m venv .venv`
+- 不需要先執行 `source .venv/bin/activate`
+- 不需要先執行 `pip install -r requirements.txt`
+
+因為 `run_app.sh` 或 `run_app.bat` 會自動幫你完成這些步驟。
+
 ### 給完全不熟的人：先看這段
 
 1. 先找到整個專案資料夾 `NurseRoster`
