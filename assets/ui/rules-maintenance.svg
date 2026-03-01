@@ -1,0 +1,95 @@
+<svg width="1200" height="760" viewBox="0 0 1200 760" xmlns="http://www.w3.org/2000/svg">
+  <rect x="0" y="0" width="1200" height="760" fill="#F8FAFC"/>
+
+  <!-- Header -->
+  <rect x="16" y="16" width="1168" height="64" rx="14" fill="#FFFFFF" stroke="#E2E8F0"/>
+  <text x="36" y="56" font-family="Inter, Arial" font-size="20" fill="#0F172A">規則維護</text>
+  <rect x="1040" y="30" width="124" height="36" rx="10" fill="#2563EB"/>
+  <text x="1062" y="54" font-family="Inter, Arial" font-size="13" fill="#FFFFFF">新增規則</text>
+
+  <!-- Main container -->
+  <rect x="16" y="96" width="1168" height="648" rx="14" fill="#FFFFFF" stroke="#E2E8F0"/>
+
+  <!-- Left: Rule types -->
+  <rect x="28" y="112" width="220" height="616" rx="12" fill="#F8FAFC" stroke="#E2E8F0"/>
+  <text x="44" y="142" font-family="Inter, Arial" font-size="12" fill="#475569">規則類型</text>
+
+  <rect x="44" y="156" width="188" height="40" rx="10" fill="#FEF2F2" stroke="#FECACA"/>
+  <text x="60" y="182" font-family="Inter, Arial" font-size="13" fill="#991B1B">硬性規則（必遵守）</text>
+
+  <rect x="44" y="206" width="188" height="40" rx="10" fill="#FFF7ED" stroke="#FED7AA"/>
+  <text x="60" y="232" font-family="Inter, Arial" font-size="13" fill="#9A3412">軟性規則（盡量滿足）</text>
+
+  <rect x="44" y="256" width="188" height="40" rx="10" fill="#EFF6FF" stroke="#BFDBFE"/>
+  <text x="60" y="282" font-family="Inter, Arial" font-size="13" fill="#1D4ED8">個人偏好</text>
+
+  <!-- Middle: Rule list -->
+  <rect x="260" y="112" width="520" height="616" rx="12" fill="#FFFFFF" stroke="#E2E8F0"/>
+  <text x="276" y="142" font-family="Inter, Arial" font-size="12" fill="#475569">規則清單</text>
+
+  <!-- Filters -->
+  <rect x="276" y="154" width="240" height="34" rx="10" fill="#F8FAFC" stroke="#E2E8F0"/>
+  <text x="290" y="176" font-family="Inter, Arial" font-size="13" fill="#475569">搜尋規則名稱…</text>
+
+  <rect x="526" y="154" width="120" height="34" rx="10" fill="#FFFFFF" stroke="#E2E8F0"/>
+  <text x="538" y="176" font-family="Inter, Arial" font-size="13" fill="#0F172A">層級：科別 ▾</text>
+
+  <rect x="656" y="154" width="110" height="34" rx="10" fill="#FFFFFF" stroke="#E2E8F0"/>
+  <text x="670" y="176" font-family="Inter, Arial" font-size="13" fill="#0F172A">狀態：啟用 ▾</text>
+
+  <!-- List rows -->
+  <g font-family="Inter, Arial" font-size="12">
+    <rect x="276" y="204" width="488" height="54" rx="10" fill="#EFF6FF" stroke="#BFDBFE"/>
+    <text x="292" y="230" fill="#0F172A">連續上班天數上限</text>
+    <text x="292" y="248" fill="#475569">層級：全域（不可覆寫） • 例如：最多 6 天</text>
+
+    <rect x="276" y="268" width="488" height="54" rx="10" fill="#FFFFFF" stroke="#E2E8F0"/>
+    <text x="292" y="294" fill="#0F172A">夜班間隔限制</text>
+    <text x="292" y="312" fill="#475569">層級：科別 • 可覆寫 • 例如：大夜後需休 1 天</text>
+
+    <rect x="276" y="332" width="488" height="54" rx="10" fill="#FFFFFF" stroke="#E2E8F0"/>
+    <text x="292" y="358" fill="#0F172A">每週工時上限</text>
+    <text x="292" y="376" fill="#475569">層級：全域（法規） • 例如：48 小時</text>
+
+    <rect x="276" y="396" width="488" height="54" rx="10" fill="#FFFFFF" stroke="#E2E8F0"/>
+    <text x="292" y="422" fill="#0F172A">假日出勤平衡（權重）</text>
+    <text x="292" y="440" fill="#475569">層級：科別 • 軟性 • 權重：0.6</text>
+  </g>
+
+  <!-- Right: Editor -->
+  <rect x="792" y="112" width="376" height="616" rx="12" fill="#FFFFFF" stroke="#E2E8F0"/>
+  <text x="808" y="142" font-family="Inter, Arial" font-size="12" fill="#475569">規則編輯</text>
+
+  <!-- Editor fields -->
+  <text x="808" y="174" font-family="Inter, Arial" font-size="12" fill="#0F172A">名稱</text>
+  <rect x="808" y="182" width="344" height="34" rx="10" fill="#F8FAFC" stroke="#E2E8F0"/>
+  <text x="820" y="204" font-family="Inter, Arial" font-size="13" fill="#475569">連續上班天數上限</text>
+
+  <text x="808" y="242" font-family="Inter, Arial" font-size="12" fill="#0F172A">層級</text>
+  <rect x="808" y="250" width="344" height="34" rx="10" fill="#FFFFFF" stroke="#E2E8F0"/>
+  <text x="820" y="272" font-family="Inter, Arial" font-size="13" fill="#0F172A">全域（法規/制度） ▾</text>
+
+  <text x="808" y="310" font-family="Inter, Arial" font-size="12" fill="#0F172A">條件值</text>
+  <rect x="808" y="318" width="344" height="34" rx="10" fill="#FFFFFF" stroke="#E2E8F0"/>
+  <text x="820" y="340" font-family="Inter, Arial" font-size="13" fill="#0F172A">最多 6 天</text>
+
+  <text x="808" y="378" font-family="Inter, Arial" font-size="12" fill="#0F172A">說明</text>
+  <rect x="808" y="386" width="344" height="88" rx="10" fill="#F8FAFC" stroke="#E2E8F0"/>
+  <text x="820" y="410" font-family="Inter, Arial" font-size="12" fill="#475569">避免過勞；若與偏好衝突，</text>
+  <text x="820" y="428" font-family="Inter, Arial" font-size="12" fill="#475569">仍以硬性規則優先。</text>
+
+  <!-- Override hint -->
+  <rect x="808" y="494" width="344" height="74" rx="12" fill="#FEF2F2" stroke="#FECACA"/>
+  <text x="820" y="522" font-family="Inter, Arial" font-size="12" fill="#991B1B">提示：此規則為「全域硬性」</text>
+  <text x="820" y="542" font-family="Inter, Arial" font-size="11" fill="#991B1B">下層（科別/個人）不可覆寫。</text>
+
+  <!-- Editor actions -->
+  <rect x="808" y="584" width="108" height="36" rx="10" fill="#FFFFFF" stroke="#E2E8F0"/>
+  <text x="834" y="608" font-family="Inter, Arial" font-size="13" fill="#0F172A">停用</text>
+
+  <rect x="926" y="584" width="108" height="36" rx="10" fill="#FFFFFF" stroke="#E2E8F0"/>
+  <text x="954" y="608" font-family="Inter, Arial" font-size="13" fill="#0F172A">還原</text>
+
+  <rect x="1044" y="584" width="108" height="36" rx="10" fill="#2563EB"/>
+  <text x="1070" y="608" font-family="Inter, Arial" font-size="13" fill="#FFFFFF">儲存</text>
+</svg>
